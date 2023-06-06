@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Resultados da Pesquisa</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="BodyResultados">
+
+        <h1>Produtos Relacionados a essa categoria</h1>
+
+        <div id="searchResults"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchResults = localStorage.getItem('searchResults');
+                if (searchResults) {
+                    document.getElementById('searchResults').innerHTML = searchResults;
+                } else {
+                    document.getElementById('searchResults').innerHTML = '<p>Nenhum resultado disponível.</p>';
+                }
+
+                // Limpa os resultados armazenados em localStorage
+                localStorage.removeItem('searchResults');
+            });
+        </script>
+
+    </body>
+    
+</html>
